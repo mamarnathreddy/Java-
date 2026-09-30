@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.nextLine();
+
+        int upper = 0;
+        int lower = 0;
+
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.isUpperCase(word.charAt(i)))
+                upper++;
+            else
+                lower++;
+        }
+
+        boolean result = false;
+
+        if (upper == word.length())
+            result = true;
+        else if (lower == word.length())
+            result = true;
+        else if (Character.isUpperCase(word.charAt(0)) &&
+                 lower == word.length() - 1)
+            result = true;
+
+        System.out.println(result);
+    }
+}
