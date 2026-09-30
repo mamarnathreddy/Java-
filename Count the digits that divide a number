@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an Integer: ");
+        int n = scanner.nextInt();
+
+        int result = 0;
+        int ognum = n;
+
+        while (n != 0) {
+            int dig = n % 10;
+
+            if (dig != 0 && ognum % dig == 0)
+                result++;
+
+            n = n / 10;
+        }
+
+        System.out.println("The number of digits divisible are: " + result);
+    }
+}
