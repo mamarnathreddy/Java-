@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter command: ");
+        String command = sc.nextLine();
+
+        String result = "";
+
+        for (int i = 0; i < command.length(); i++) {
+            if (command.charAt(i) == 'G') {
+                result = result + "G";
+            }
+            else if (command.charAt(i) == '(') {
+                if (command.charAt(i + 1) == ')') {
+                    result = result + "o";
+                    i++;
+                }
+                else {
+                    result = result + "al";
+                    i = i + 3;
+                }
+            }
+        }
+
+        System.out.println("Output: " + result);
+    }
+}
