@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an Integer: ");
+        int num = scanner.nextInt();
+
+        int result = 0;
+        int ognum = num;
+
+        while (num != 0) {
+            int dig = num % 10;
+
+            if (dig != 0 && ognum % dig == 0)
+                result++;
+
+            num = num / 10;
+        }
+
+        System.out.println("Number of digits in num that divide num are: " + result);
+    }
+}
